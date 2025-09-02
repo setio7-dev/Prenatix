@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prenatix - Chatbot</title>
+    <link rel="icon" type="image/png" href="./assets/image/logo/logo.svg" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body class="bg-linear">
+    <!-- Navbar Start -->
+     <nav class="w-full lg:h-[14vh] h-[11vh] flex flex-col justify-center items-start fixed z-[50]">
+        <a href="./index.html" class="flex justify-center gap-3 cursor-pointer items-center lg:ml-12 ml-8">
+            <img class="lg:w-[18px] w-[16px] h-auto" src="./assets/image/icon/back.png" alt="">
+            <h1 class="font-medium lg:text-[18px] w-[20px]">Kembali</h1>
+        </a>
+     </nav>
+    <!-- Navbar End -->
+
+    <!-- Chatbot Start -->
+     <section class="w-full h-screen flex flex-col justify-start items-center relative fade-up">
+        <div class="flex flex-col w-full justify-center items-center gap-6 lg:pt-12 pt-22" id="pageWelcome">
+            <img src="./assets/image/logo/logo_chatbot.svg" alt="" class="lg:w-[80px] w-[60px] h-auto animate-up-down">
+            <div class="flex flex-col gap-1 justify-center items-center">
+                <p class="font-semibold text-[#6B6B6B] lg:text-[20px] text-[14px]">Selamat Datang di <span class="text-primary">Prenatix</span> 👋</p>
+                <h1 class="lg:text-[28px] text-[16px] font-semibold text-black">Apa yang ingin Ibu ketahui hari ini?</h1>
+            </div>
+            <div class="w-full lg:w-auto overflow-x-scroll px-[40px] lg:px-0">
+                <div class="flex lg:justify-center w-max justify-start items-center mt-4 gap-12">
+                    <div class="flex flex-col border-2 rounded-xl p-4 gap-6 cursor-pointer w-[280px] border-[#BEBEBE] bg-white hover:-translate-y-2 duration-200" id="ask1Btn">
+                        <img src="./assets/image/icon/chatbot_icon1.png" alt="" class="w-[45px] h-auto">
+                        <p class="font-medium text-[14px] text-[#333333]">Buatkan panduan makanan sehat untuk trimester pertama</p>
+                    </div>
+                    <div class="flex flex-col border-2 rounded-xl p-4 gap-6 cursor-pointer w-[280px] border-[#BEBEBE] bg-white hover:-translate-y-2 duration-200" id="ask2Btn">
+                        <img src="./assets/image/icon/chatbot_icon2.png" alt="" class="w-[45px] h-auto">
+                        <p class="font-medium text-[14px] text-[#333333]">Tentukan jadwal kontrol sesuai usia kandungan bunda</p>
+                    </div>
+                    <div class="flex flex-col border-2 rounded-xl p-4 gap-6 cursor-pointer w-[280px] border-[#BEBEBE] bg-white hover:-translate-y-2 duration-200" id="ask3Btn">
+                        <img src="./assets/image/icon/chatbot_icon3.png" alt="" class="w-[45px] h-auto">
+                        <p class="font-medium text-[14px] text-[#333333]">Berikan tips agar tidur menjadi nyenyak saat hamil besar</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="lg:mt-22 mt-18 overflow-x-scroll lg:h-[70vh] h-[72vh]" id="pageChatScroll">
+            <div class="pb-10">
+                <div class="flex flex-col justify-start lg:w-[70vw] w-[90vw] lg:gap-2 gap-8" id="pageChat">
+                    <!-- Mapping on javascript -->
+                </div>
+            </div>
+        </div>
+        <div class="absolute bg-[#00000029] w-full h-screen z-[50] flex flex-col justify-center items-center" id="speakPage">
+            <div class="bg-white rounded-lg lg:w-[400px] w-[280px] h-auto px-6 py-10 flex flex-col justify-center items-center gap-5">
+                <img src="./assets/image/logo/logo_chatbot.svg" alt="" class="lg:w-[100px] w-[60px] h-auto animate-up-down">
+                <p class="lg:text-[20px] text-[16px] font-medium">Prenatix Mendengarkan...</p>
+            </div>
+        </div>
+        <div class="absolute bottom-16 lg:w-[70vw] w-[90vw] rounded-xl flex justify-between items-center lg:gap-8 gap-2">
+            <div class="bg-white w-full flex justify-start items-center lg:h-[70px] h-[60px] rounded-xl gap-6 shadow-lg lg:px-8 px-4">
+                <input type="text" class="w-full font-medium lg:text-[16px] text-[12px] border-0 outline-0" placeholder="Tulis pertanyaan disini..." id="inputChatbot">
+                <img src="./assets/image/icon/send.png" alt="" class="lg:w-[30px] w-[26px] hover:-rotate-[20deg] duration-200 relative h-auto" id="sendBtn">
+            </div>
+            <audio id="voiceEffect">
+                <source src="./assets/audio/voice_effect.mp3" type="audio/mp3">
+            </audio>
+            <img src="./assets/image/icon/voice.png" alt="" class="lg:w-[70px] w-[60px] cursor-pointer h-auto hover:-translate-y-2 duration-200" id="voiceBtn">
+        </div>
+     </section>
+    <!-- Chatbot End -->
+
+    <!-- Javascript -->
+     <script type="module" src="./js/data/chatbot.js"></script>
+     <script type="module" src="./js/chatbot.js"></script>
+</body>
+</html>
