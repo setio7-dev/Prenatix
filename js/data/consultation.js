@@ -4,8 +4,8 @@ const img3 = "../../assets/image/pic/consultation/3.png"
 const img4 = "../../assets/image/pic/consultation/4.png"
 const img5 = "../../assets/image/pic/consultation/5.png"
 const img6 = "../../assets/image/pic/consultation/6.png"
-const sariImg = "../../assets/image/pic/consultation/review/sari.png"
-const yuniImg = "../../assets/image/pic/consultation/review/yuni.png"
+const sariImg = "../../assets/image/pic/consultation/review/Sari.png"
+const yuniImg = "../../assets/image/pic/consultation/review/Yuni.png"
 
 export const consultation = [
     {
