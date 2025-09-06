@@ -186,8 +186,24 @@ function resizeCanvas() {
     playerProp.x = (canvas.width - playerProp.sizeX) / 2;
     playerProp.y = canvas.height - playerProp.sizeY;
 
-    if (window.innerWidth < 700) {
-        rotatePage.style.display = "flex";
+    const width = window.innerWidth;
+    const height = window.innerHeight;
+    const isPortrait = height > width;
+
+    if (width <= 768) {
+        if (isPortrait) {
+            rotatePage.style.display = "flex";
+        } else {
+            rotatePage.style.display = "none";
+        }
+    } else if (width <= 1024) {
+        if (isPortrait) {
+            rotatePage.style.display = "flex";
+        } else {
+            rotatePage.style.display = "none";
+        }
+    } else {
+        rotatePage.style.display = "none";
     }
 
     if (canvas.width < 1300) {

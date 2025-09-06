@@ -54,6 +54,21 @@ window.addEventListener("scroll", () => {
 });
 // Scroll Animation End
 
+// Service Start
+const choosePage = document.getElementById("choosePage");
+const chooseShow = document.getElementById("chooseShow");
+const chooseHide = document.getElementById("chooseHide");
+
+choosePage.style.display = "none";
+chooseShow.addEventListener('click', () => {
+  choosePage.style.display = "block";
+});
+
+chooseHide.addEventListener('click', () => {
+  choosePage.style.display = "none";
+});
+// Service End
+
 // Testimoni Start
 import { testimoniData1, testimoniData2 } from "./data/testimoni.js";
 const stars = '../assets/image/pic/testimoni/stars.png';

@@ -30,7 +30,7 @@ const alreadyAnswer = document.getElementById("alreadyAnswer");
 const answerValue = document.querySelectorAll("input[name='radio']");
 const nextBtns = document.querySelectorAll("#nextBtnMobile, #nextBtnDesktop");
 const prevBtns = document.querySelectorAll("#prevBtnMobile, #prevBtnDesktop");
-const isMobile = window.innerWidth <= 758;
+const isMobile = window.innerWidth <= 1024;
 const loadingPage = document.getElementById("loadingPage");
 const loadingPageText = document.getElementById("loadingPageText");
 const navHome = document.getElementById("navHome");

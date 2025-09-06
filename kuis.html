@@ -28,8 +28,8 @@
 
     <!-- Section Start -->
      <section class="bg-[url('./assets/image/pic/game/quiz/background.png')] flex justify-center lg:items-center items-start w-full min-h-screen bg-cover" id="questionHome">
-        <div class="container lg:w-280 flex lg:flex-row flex-col-reverse lg:justify-between justify-center lg:items-center items-start lg:pt-0 pt-24 lg:px-0 px-6 fade-up">
-            <div class="flex flex-col gap-4 lg:pt-10 pt-6 lg:w-160 w-full">
+        <div class="container lg:w-280 flex lg:flex-row flex-col-reverse lg:justify-between justify-center lg:items-center items-start lg:pt-0 md:mt-24 lg:mt-0 mt-0 pt-24 lg:px-0 px-6 fade-up">
+            <div class="flex flex-col gap-4 lg:pt-10 pt-6 lg:w-160 md:w-full w-full">
                 <h1 class="lg:text-[42px] text-[24px] font-[600] font-semibold text-white">Kuis Kehamilan</h1>
                 <div class="flex flex-col gap-2 text-end -mt-8">
                     <p class="font-semibold text-[16px] text-white" id="progressCount">0%</p>
@@ -76,16 +76,16 @@
                 </div>
             </div>
             <div class="flex flex-col lg:mt-0 -mt-4 gap-6">
-                <div class="bg-[#631B99] text-white w-90 display-hidden-flex flex-col justify-center items-center px-6 py-8 rounded-lg">
+                <div class="bg-[#631B99] text-white lg:w-90 md:w-full w-90 display-hidden-flex flex-col justify-center items-center px-6 ;g:py-8 md:py-16 py-8 rounded-lg">
                     <h1 class="font-semibold text-[42px]" id="alreadyAnswerCount">0%</h1>
                     <p class="font-medium text-[16px]" id="alreadyAnswer">Ibu telah menjawab 1 pertanyaan</p>
                 </div>
-                <div class="lg:overflow-y-scroll overflow-x-scroll lg:w-auto w-[90vw] lg:h-62 h-auto" >
+                <div class="lg:overflow-y-scroll overflow-x-scroll lg:w-auto md:w-[86vw] w-[90vw] lg:h-62 h-auto" >
                     <div class="flex lg:flex-col flex-row gap-4 mt-2" id="totalQuestion">
                         <!-- Javascript -->
                     </div>
                 </div>
-                <div class="display-hidden-flex justify-between gap-10 items-center">
+                <div class="display-quiz justify-between gap-10 items-center">
                     <button class="bg-[#01002C] w-full text-white font-semibold hover:scale-95 hover:opacity-90 duration-200 border-2 border-[#631B99] px-8 py-3 rounded-lg text-[16px] cursor-pointer" id="prevBtnDesktop">Kembali</button>
                     <button class="bg-primary w-full text-white font-semibold  hover:scale-95 hover:opacity-90 duration-200 px-8 py-3 rounded-lg text-[16px] cursor-pointer" id="nextBtnDesktop">Selanjutnya</button>
                 </div>

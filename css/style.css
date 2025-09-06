@@ -141,6 +141,18 @@ html {
   display: none;
 }
 
+.display-tablet-hidden {
+  display: block;
+}
+
+.display-footer {
+  display: flex;
+}
+
+.display-quiz {
+  display: flex;
+}
+
 /* Animation */
 .animate-up-down {
   animation: upDown 2s ease-in-out infinite alternate;
@@ -236,6 +248,69 @@ html {
   }
 }
 
+/* Tablet */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .display-hidden {
+    display: block;
+  }
+
+  .display-hidden-flex {
+    display: flex;
+  }
+
+  .display-flex {
+    display: flex;
+  }
+
+  .display-tablet-hidden {
+    display: none;
+  }
+
+  .display-footer {
+    display: none;
+  }
+
+  .display-quiz {
+    display: none;
+  }
+
+  /* Navbar Active Start */
+  .navbar-active {
+    right: -300%;
+    transition: all ease-in-out 0.6s;
+  }
+
+  .navbar-active.active {
+    right: 0;
+    transition: all ease-in-out 0.6s;
+  }  
+
+  .navbar-btn-active-top,
+  .navbar-btn-active-center,
+  .navbar-btn-active-bottom {
+    rotate: 0deg;
+    transition: all ease-in-out 0.7s;
+  }
+
+  .navbar-btn-active-top.active {
+    transition: all ease-in-out 0.7s;
+    rotate: 45deg;
+    transform: translateY(630%);
+  }
+
+  .navbar-btn-active-center.active {
+    transition: all ease-in-out 0.7s;
+    opacity: 0;
+  }
+
+  .navbar-btn-active-bottom.active {
+    rotate: -45deg;
+    transition: all ease-in-out 0.7s;
+    transform: translateY(-630%);
+  }
+}
+
+/* Handphone */
 @media (min-width: 320px) and (max-width: 767px) {
   /* Display Hidden Responsive */
   .display-hidden,
@@ -245,6 +320,18 @@ html {
 
   .display-flex {
     display: flex;
+  }
+
+  .display-tablet-hidden {
+    display: block;
+  }
+
+  .display-footer {
+    display: none;
+  }
+
+  .display-quiz {
+    display: none;
   }
 
   /* Navbar Active Start */
