@@ -97,7 +97,7 @@ playAgainBtn.addEventListener("click", () => {
 });
 
 backBtn.addEventListener("click", () => {
-    window.location.href = "./pilih.html";
+    window.location.href = "./index.html";
 });
 
 function countDownInterval() {
