@@ -40,6 +40,10 @@ html {
   background: linear-gradient(to right, #AD40FF, #4E0089);
 }
 
+.bg-static {
+  background-color: #5A009D;
+}
+
 /* Nav Link */
 .nav-link {
   font-family: "Poppins-Regular";

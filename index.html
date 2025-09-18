@@ -105,7 +105,7 @@
       <section class="flex flex-col items-center justify-center gap-8 bg-purple w-[100vw] h-auto py-10 fade-up section" id="service">
         <div class="lg:w-280 w-full lg:px-0 md:px-12 px-5 mx-auto">
           <div class="flex flex-row justify-start w-full">
-            <div class="flex flex-col gap-4 lg:w-[600px] w-full">
+            <div class="flex flex-col gap-4 lg:w-[660px] w-full">
                 <h1 class="font-semibold text-white text-[14px] rounded-[50px] px-5.5 py-2 bg-gradient-to-r from-[#A52DFF] to-[#7900D4] w-fit">Layanan Kami</h1>
                 <h1 class="font-semibold text-white lg:text-[30px] text-[24px]">Dukung Setiap Langkah Kehamilanmu dengan Layanan Terbaik</h1>
                 <p class="font-regular text-white lg:text-[14px] text-[12px] text-justify">Prenatix menyediakan berbagai fitur edukatif dan dukungan pintar untuk menemani perjalanan kehamilan dengan aman, nyaman, dan penuh informasi.</p>
@@ -235,6 +235,67 @@
         <img src="./assets/image/pic/two_child.png" class="lg:w-115 md:w-80 fade-left w-full h-auto object-contain" alt="">
       </section>
       <!-- Why Prenatix End -->
+
+      <!-- Statictic Start -->
+       <section class="flex flex-col fade-up lg:py-20 py-10 h-auto justify-center items-center w-full lg:gap-0 section fade-up">
+        <div class="flex flex-col lg:items-center gap-12 items-start justify-between w-full">
+          <div class="text-center flex flex-col gap-2">
+            <h1 class="font-bold text-[46px]">Statistik Kasus <span class="text-[#4e0089]">Keguguran</span> Tahunan</h1>
+            <p class="font-regular text-[#6B6B6B]">Dengan memantau data keguguran setiap tahun, kita dapat memahami tren peningkatan maupun penurunan kasus. Informasi ini sangat penting untuk merancang strategi pencegahan, memberikan edukasi kepada calon ibu, serta mendukung deteksi dini agar kesehatan ibu dan janin tetap terjaga secara optimal.</p>
+          </div>
+          <div class="min-h-screen flex items-center justify-center">
+            <div class="bg-white/5 bg-static backdrop-blur-lg rounded-3xl p-10 shadow-2xl border border-white/10 w-full">
+              <div class="flex font-semibold justify-between items-center mb-8 flex-col lg:flex-row gap-4 lg:gap-0">
+                <h1 class="text-4xl lg:text-5xl font-light text-white">Data <span class="text-[#a52dff]">Statistik</span> pertahun</h1>
+                <div id="yearDropdown" class="relative">
+                  <div class="bg-white/10 border border-white/20 rounded-xl px-4 py-2 text-white cursor-pointer backdrop-blur-sm hover:scale-105 transition-all duration-300">Pertahun ▼</div>
+                  <div id="yearList" class="absolute right-0 mt-2 w-40 bg-white rounded-xl shadow-lg hidden">
+                    <div class="px-4 py-2 cursor-pointer hover:bg-gray-200 rounded-lg" data-year="2024">2024</div>
+                    <div class="px-4 py-2 cursor-pointer hover:bg-gray-200 rounded-lg" data-year="2023">2023</div>
+                    <div class="px-4 py-2 cursor-pointer hover:bg-gray-200 rounded-lg" data-year="2022">2022</div>
+                    <div class="px-4 py-2 cursor-pointer hover:bg-gray-200 rounded-lg" data-year="2021">2021</div>
+                    <div class="px-4 py-2 cursor-pointer hover:bg-gray-200 rounded-lg" data-year="2020">2020</div>
+                  </div>
+                </div>
+              </div>
+              <div class="flex font-semibold gap-6 mb-8 flex-wrap">
+                <div class="flex items-center gap-2 text-white"><div class="w-4 h-4 rounded-full bg-cyan-400"></div><span class="text-sm">< 20 tahun</span></div>
+                <div class="flex items-center gap-2 text-white"><div class="w-4 h-4 rounded-full bg-pink-300"></div><span class="text-sm">20-35 tahun</span></div>
+                <div class="flex items-center gap-2 text-white"><div class="w-4 h-4 rounded-full bg-yellow-300"></div><span class="text-sm">> 35 tahun</span></div>
+              </div>
+              <div class="bg-white/5 rounded-2xl overflow-hidden">
+                <canvas id="chartCanvas" width="1100" height="400" class="w-full h-auto cursor-crosshair"></canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Statictic End -->
+
+      <!-- Timeline Start -->
+       <section class="flex flex-col fade-up lg:py-20 py-10 h-auto justify-center items-center w-full lg:gap-0 section">
+        <div class="flex flex-col lg:items-center gap-12 items-start justify-between w-full">
+          <h1 class="font-semibold text-[46px]">Data <span class="text-secondary">Kehamilan</span></h1>
+          <div class="flex flex-col justify-center gap-4" id="timelinePage">
+            <!-- Mapping on Javascript -->
+          </div>
+        </div>
+       </section>
+      <!-- Timeline End -->
+
+      <!-- Tips Start -->
+       <section class="flex flex-col fade-up lg:py-20 py-10 h-auto justify-center items-center w-full lg:gap-0 section fade-up">
+        <div class="flex flex-col lg:items-center gap-12 items-start justify-between w-full">
+          <div class="flex flex-col gap-2 text-center w-[800px]">
+            <h1 class="font-semibold text-[46px]">Tips Menjaga <span class="text-secondary">Kehamilan Sehat</span></h1>
+            <p class="font-regular text-[#6B6B6B] text-[16px]">Kumpulan strategi sederhana dan efektif untuk mendukung kesehatan ibu hamil serta tumbuh kembang janin agar tetap optimal, nyaman, dan aman sepanjang masa kehamilan.</p>
+          </div>
+          <div class="flex justify-center items-center gap-10 flex-wrap" id="tipsPage">
+            <!-- Mapping On Javascript -->
+          </div>
+        </div>
+       </section>
+      <!-- Tips End -->
 
       <!-- Testimony Start -->
       <section class="flex flex-col fade-up lg:py-20 py-10 h-auto justify-center items-center w-full lg:gap-0 section" id="testimony">
