@@ -28,7 +28,26 @@ const ask3Btn = document.getElementById('ask3Btn');
 const voiceBtn = document.getElementById('voiceBtn');
 const speakPage = document.getElementById('speakPage');
 const voiceEffect = document.getElementById("voiceEffect");
-const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+let recognition;
+
+if ('SpeechRecognition' in window || 'webkitSpeechRecognition' in window) {
+  recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+  
+  recognition.lang = 'id-ID'; 
+  recognition.interimResults = false;
+  recognition.maxAlternatives = 1;
+
+  recognition.onresult = (event) => {
+    const text = event.results[0][0].transcript;
+    console.log("Hasil:", text);
+  };
+
+  recognition.onerror = (event) => {
+    console.error("Error:", event.error);
+  };
+} else {
+  console.warn("Browser tidak mendukung Speech Recognition");
+}
 
 pageWelcome.style.display = 'flex';
 pageChat.style.display = 'none';
@@ -40,14 +59,16 @@ inputChat.addEventListener('keydown', (e) => {
     }
 });
 
-recognition.lang = 'id-ID'; 
-recognition.interimResults = false;
-recognition.maxAlternatives = 1;
-
 voiceBtn.addEventListener('click', () => {
-    speakPage.style.display = 'flex';
     voiceEffect.play();
-    recognition.start();
+    if (recognition) {
+        recognition.start();
+    } else {
+        alert("Fitur voice tidak tersedia di browser ini. Coba pakai Chrome.");
+        return;
+    }
+    
+    speakPage.style.display = 'flex';
 });
 
 recognition.onstart = () => {
