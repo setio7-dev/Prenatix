@@ -54,22 +54,27 @@ chooseHide.addEventListener('click', () => {
 // Service End
 
 // Statistic Start
+function isMobileOrTablet() {
+    const w = window.innerWidth
+    return w <= 1024
+}
+
 class StackedBarChart {
     constructor(canvasId, data) {
         this.canvas = document.getElementById(canvasId)
+        if (isMobileOrTablet()) {
+            this.canvas.height = 1000
+        } else {
+            this.canvas.height = 400
+        }
         this.ctx = this.canvas.getContext('2d')
         this.data = data
-        this.colors = {
-            young: '#4ecdc4',
-            middle: '#ff9a9e',
-            old: '#ffeaa7'
-        }
+        this.colors = { young: '#4ecdc4', middle: '#ff9a9e', old: '#ffeaa7' }
         this.padding = { top: 40, right: 60, bottom: 80, left: 60 }
         this.hoveredBar = -1
         this.setupEventListeners()
         this.draw()
     }
-
     setupEventListeners() {
         this.canvas.addEventListener('mousemove', e => {
             const rect = this.canvas.getBoundingClientRect()
@@ -88,7 +93,6 @@ class StackedBarChart {
             }
         })
     }
-
     getBarIndex(mouseX, mouseY) {
         const chartWidth = this.canvas.width - this.padding.left - this.padding.right
         const chartHeight = this.canvas.height - this.padding.top - this.padding.bottom
@@ -106,7 +110,6 @@ class StackedBarChart {
         }
         return -1
     }
-
     draw() {
         this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height)
         const chartWidth = this.canvas.width - this.padding.left - this.padding.right
@@ -116,7 +119,6 @@ class StackedBarChart {
         this.drawBars(chartWidth, chartHeight, maxValue)
         this.drawXAxis(chartWidth, chartHeight)
     }
-
     drawYAxis(maxValue, chartHeight) {
         this.ctx.strokeStyle = 'rgba(255, 255, 255, 0.2)'
         this.ctx.lineWidth = 1
@@ -134,7 +136,6 @@ class StackedBarChart {
             this.ctx.fillText(Math.round(value), this.padding.left - 10, y + 4)
         }
     }
-
     drawBars(chartWidth, chartHeight, maxValue) {
         const barWidth = (chartWidth / this.data.length) * 0.7
         const barSpacing = chartWidth / this.data.length
@@ -186,7 +187,6 @@ class StackedBarChart {
             }
         })
     }
-
     drawRoundedRect(x, y, width, height, topLeftRadius, topRightRadius, bottomRightRadius, bottomLeftRadius) {
         this.ctx.beginPath()
         this.ctx.moveTo(x + topLeftRadius, y)
@@ -201,7 +201,6 @@ class StackedBarChart {
         this.ctx.closePath()
         this.ctx.fill()
     }
-
     drawTooltip(index, x, y) {
         const item = this.data[index]
         const total = item.young + item.middle + item.old
@@ -223,7 +222,6 @@ class StackedBarChart {
         this.ctx.fillText(`20-35: ${item.middle}`, tooltipX + 10, tooltipY + 60)
         this.ctx.fillText(`> 35: ${item.old}`, tooltipX + 10, tooltipY + 75)
     }
-
     drawXAxis(chartWidth, chartHeight) {
         this.ctx.fillStyle = 'rgba(255, 255, 255, 0.8)'
         this.ctx.font = '14px system-ui, sans-serif'
@@ -235,7 +233,6 @@ class StackedBarChart {
             this.ctx.fillText(item.month, x, y)
         })
     }
-
     adjustBrightness(color, amount) {
         const hex = color.replace('#', '')
         const num = parseInt(hex, 16)
@@ -244,7 +241,6 @@ class StackedBarChart {
         const b = Math.max(0, Math.min(255, (num & 0x0000FF) + amount))
         return `rgb(${r}, ${g}, ${b})`
     }
-
     updateData(newData) {
         this.data = newData
         this.draw()
@@ -328,12 +324,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const chart = new StackedBarChart('chartCanvas', yearlyData[2024])
     const yearDropdown = document.getElementById('yearDropdown')
     const yearList = document.getElementById('yearList')
-    console.log()
-
     yearDropdown.addEventListener('click', () => {
         yearList.classList.toggle('hidden')
     })
-
     yearList.querySelectorAll('div[data-year]').forEach(item => {
         item.addEventListener('click', () => {
             const year = item.getAttribute('data-year')
@@ -341,8 +334,7 @@ document.addEventListener('DOMContentLoaded', () => {
             yearList.classList.add('hidden')
         })
     })
-})
-
+});
 // Statistic End
 
 // Timeline Start
@@ -367,7 +359,7 @@ const timelineData = [
         name: "Pembuahan",
         title: "Momen Pembuahan",
         text: "Pada minggu pertama kehamilan, proses penting terjadi ketika sperma berhasil membuahi sel telur di dalam tuba falopi. Dari jutaan sperma yang masuk, hanya satu yang mampu menembus dinding sel telur. Pertemuan ini menghasilkan zigot, yaitu cikal bakal kehidupan baru. Zigot kemudian mulai mengalami pembelahan sel secara cepat, membentuk bola kecil berisi banyak sel.",
-        video: video1,
+        video: "https://www.youtube.com/embed/s-Xpa5UZAZs?si=P-QYqr1DILIcPOyz",
         tag: tag1
     },
     {
@@ -375,7 +367,7 @@ const timelineData = [
         name: "Trimester Pertama",
         title: "Detak Jantung Pertama",
         text: "Embrio berkembang pesat: tabung saraf membentuk otak dan sumsum tulang belakang, jantung mulai berdetak pada minggu ke-6, dan organ dasar seperti hati, ginjal, serta sistem peredaran darah mulai terbentuk. Di akhir trimester pertama, embrio resmi disebut janin. Gejala seperti mual, muntah, dan perubahan hormon umum dialami ibu.",
-        video: video2,
+        video: "https://www.youtube.com/embed/EhUOkTPW7L0?si=8Hn8uHAJsSrnjzXU",
         tag: tag2
     },
     {
@@ -383,7 +375,7 @@ const timelineData = [
         name: "Trimester Kedua",
         title: "Gerakan Janin Pertama",
         text: "Janin tumbuh lebih cepat, wajah semakin jelas, sidik jari terbentuk, dan gerakan aktif seperti menendang mulai terasa. Indera pendengaran bekerja, janin bisa merespons suara dari luar rahim. Pada fase ini, ibu biasanya merasa lebih bertenaga karena mual berkurang, meski tubuh mulai terlihat berubah signifikan.",
-        video: video3,
+        video: "https://www.youtube.com/embed/DDb6mMIHtas?si=a66sQzhtcyo5xRqQ",
         tag: tag3
     },
     {
@@ -391,7 +383,7 @@ const timelineData = [
         name: "Trimester Ketiga",
         title: "Janin berkembang sempurna",
         text: "Janin berkembang sempurna, berat badan bertambah dengan cepat, dan paru-paru matang. Janin biasanya sudah berada pada posisi kepala di bawah sebagai persiapan persalinan. Ibu bisa mengalami rasa tidak nyaman, seperti susah tidur atau sesak napas, karena janin semakin besar.",
-        video: video4,
+        video: "https://www.youtube.com/embed/n7BSXMvo3O4?si=Sv_T6xxgojQmUWKq",
         tag: tag4
     },
     {
@@ -399,7 +391,7 @@ const timelineData = [
         name: "Proses Persalinan",
         title: "Hari Kelahiran",
         text: "Ketika tubuh ibu siap melahirkan, kontraksi rahim dimulai. Proses ini melibatkan pembukaan serviks dan dorongan janin keluar melalui jalan lahir. Setelah bayi lahir, plasenta juga ikut keluar. Persalinan adalah puncak dari perjalanan kehamilan yang panjang dan penuh perubahan.",
-        video: video5,
+        video: "https://www.youtube.com/embed/dzEPnx2XBEQ?si=yH5ICpVzYGv3Oi0i",
         tag: tag5
     },
 ];
@@ -409,21 +401,42 @@ timelineData.forEach((item, index) => {
     ? "../assets/image/pic/timeline/chat-right.png"
     : "../assets/image/pic/timeline/chat-left.png";
 
+    function isMobile() {
+      return window.innerWidth <= 767;
+    }
+
     timelinePage.innerHTML += `
-        <div class="flex justify-center items-center ${index % 2 ? 'flex-row-reverse' : 'flex-row'}">
-          <div class="p-10 w-[500px] ${index % 2 ? 'fade-left' : 'fade-right'} h-[300px] object-cover bg-no-repeat bg-contain bg-center flex flex-col justify-center gap-2 -mt-24" style="background-image: url('${bgUrl}')">
+        <div class="flex relative justify-center items-center ${index % 2 ? 'flex-row-reverse' : 'flex-row'}">
+          ${isMobile() ? `
+          <div class="lg:p-10 md:p-10 p-6 cursor-pointer hover:scale-105 duration-300 lg:relative md:absolute absolute lg:w-[500px] md:w-[500px] w-[320px] ${index % 2 ? 'fade-left' : 'fade-right'} h-[300px] flex flex-col justify-center bg-white rounded-lg border-1 border-[#6b6b6b] gap-2 lg:-mt-24 mt-0 lg:top-0 md:top-30 top-30">
+            <h1 class="text-gradient font-semibold text-[22px] text-center">${item.title}</h1>
+            <p class="text-gray font-regular text-[12px] text-center">${item.text}</p>
+          </div>
+          ` : `
+          <div class="lg:p-10 md:p-10 p-6 cursor-pointer hover:scale-105 duration-300 lg:relative md:absolute absolute lg:w-[500px] md:w-[500px] w-[320px] ${index % 2 ? 'fade-left' : 'fade-right'} h-[300px] object-cover bg-no-repeat bg-contain bg-center flex flex-col justify-center gap-2 lg:-mt-24 mt-0 lg:top-0 md:top-30 top-30" style="background-image: url('${bgUrl}')">
             <h1 class="text-gradient font-semibold text-[22px] ${index % 2 ? 'text-right' : 'text-left'}">${item.title}</h1>
             <p class="text-gray font-regular text-[12px] ${index % 2 ? 'text-right' : 'text-left'}">${item.text}</p>
           </div>
+          `}
           <div class="flex flex-col justify-center items-center gap-4">
             <p class="text-white bg-primary p-4 rounded-lg font-semibold text-[20px] w-60 text-center">${item.name}</p>
             <div class="w-1 h-28 bg-primary rounded-lg"></div>
             <img src="${circleTimeline}" class="w-[40px] h-auto" alt="">
-            <div class="w-1 h-100 bg-primary rounded-lg"></div>
+            <div class="w-1 lg:h-100 md:h-160 h-140 bg-primary rounded-lg"></div>
           </div>
-          <div class="flex flex-col gap-6 mt-30 ${index % 2 ? 'fade-right' : 'fade-left'}">
-            <img src="${item.tag}" class="w-[160px] h-auto ${index % 2 ? 'ml-auto' : 'mr-auto'}" alt="">
-            <img src="${item.video}" class="w-auto ${index % 2 ? 'h-[280px]' : 'h-[300px]'}" alt="">
+          <div class="flex flex-col lg:relative md:absolute absolute lg:w-auto md:w-[500px] w-[320px] gap-6 lg:mt-30 mt-0 lg:top-0 md:top-110 top-120 ${index % 2 ? 'fade-right' : 'fade-left'}">
+            <img src="${item.tag}" class="w-[160px] h-auto ${index % 2 ? 'ml-auto' : 'mr-auto'}" alt="">                        
+            <div class="w-full lg:w-[500px] md:w-[500px] aspect-video">
+              <iframe
+                class="w-full h-full rounded-lg"
+                src="${item.video}"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+              ></iframe>
+            </div>
           </div>
         </div>
     `;
@@ -486,13 +499,13 @@ const tipsData = [
 
 tipsData.forEach((item, index) => {
     tipsPage.innerHTML += `
-        <div class="flex flex-col bg-[#631B99] p-6 rounded-lg w-[540px] min-h-[240px] h-auto">
+        <div class="flex flex-col bg-[#631B99] p-6 rounded-lg lg:w-[540px] w-full lg:min-h-[240px] md:h-[200px] min-h-[240px] h-auto hover:scale-105 duration-300 cursor-pointer">
           <div class="flex items-center gap-4">
-            <p class="font-semibold text-white bg-[#6B00FF] px-4 py-2 rounded-full text-[16px]">${item.id}</p>
-            <h1 class="font-semibold text-black text-[22px] text-white">${item.title}</h1>
+            <p class="font-semibold text-white bg-[#6B00FF] px-4 py-2 rounded-full lg:text-[16px] md:text-[16px] text-[14px]">${item.id}</p>
+            <h1 class="font-semibold text-black lg:text-[22px] md:text-[22px] text-[16px] text-white">${item.title}</h1>
           </div>
-          <div class="flex items-center gap-4">
-            <p class="text-white font-regular text-[14px]">${item.desc}</p>
+          <div class="flex lg:flex-row md:flex-row flex-col-reverse items-center lg:gap-4 md:gap-4 gap-8 lg:mt-0 md:mt-0 mt-8">
+            <p class="text-white font-regular lg:text-[14px] md:text-[14px] text-[12px]">${item.desc}</p>
             <img src="${item.image}" class="w-[${item.width}px] h-auto" alt="">
           </div>
         </div>
