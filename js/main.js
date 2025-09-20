@@ -413,7 +413,7 @@ timelineData.forEach((item, index) => {
             <p class="text-gray font-regular text-[12px] text-center">${item.text}</p>
           </div>
           ` : `
-          <div class="lg:p-10 md:p-10 p-6 cursor-pointer hover:scale-105 duration-300 lg:relative md:absolute absolute lg:w-[500px] md:w-[500px] w-[320px] ${index % 2 ? 'fade-left' : 'fade-right'} h-[300px] object-cover bg-no-repeat bg-contain bg-center flex flex-col justify-center gap-2 lg:-mt-24 mt-0 lg:top-0 md:top-30 top-30" style="background-image: url('${bgUrl}')">
+          <div class="lg:p-10 md:p-10 p-6 cursor-pointer hover:scale-105 duration-300 lg:relative md:absolute absolute lg:w-[420px] md:w-[500px] w-[320px] ${index % 2 ? 'fade-left' : 'fade-right'} h-[300px] object-cover bg-no-repeat bg-contain bg-center flex flex-col justify-center gap-2 lg:-mt-24 mt-0 lg:top-0 md:top-30 top-30" style="background-image: url('${bgUrl}')">
             <h1 class="text-gradient font-semibold text-[22px] ${index % 2 ? 'text-right' : 'text-left'}">${item.title}</h1>
             <p class="text-gray font-regular text-[12px] ${index % 2 ? 'text-right' : 'text-left'}">${item.text}</p>
           </div>
@@ -426,7 +426,7 @@ timelineData.forEach((item, index) => {
           </div>
           <div class="flex flex-col lg:relative md:absolute absolute lg:w-auto md:w-[500px] w-[320px] gap-6 lg:mt-30 mt-0 lg:top-0 md:top-110 top-120 ${index % 2 ? 'fade-right' : 'fade-left'}">
             <img src="${item.tag}" class="w-[160px] h-auto ${index % 2 ? 'ml-auto' : 'mr-auto'}" alt="">                        
-            <div class="w-full lg:w-[500px] md:w-[500px] aspect-video">
+            <div class="w-full lg:w-[420px] md:w-[500px] aspect-video">
               <iframe
                 class="w-full h-full rounded-lg"
                 src="${item.video}"
