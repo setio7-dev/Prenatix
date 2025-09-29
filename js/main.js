@@ -338,19 +338,12 @@ document.addEventListener('DOMContentLoaded', () => {
 // Statistic End
 
 // Timeline Start
-const video1 = "../assets/image/pic/timeline/video1.png";
-const video2 = "../assets/image/pic/timeline/video2.png";
-const video3 = "../assets/image/pic/timeline/video3.png";
-const video4 = "../assets/image/pic/timeline/video4.png";
-const video5 = "../assets/image/pic/timeline/video5.png";
-const tag1 = "../assets/image/pic/timeline/tag1.png";
-const tag2 = "../assets/image/pic/timeline/tag2.png";
-const tag3 = "../assets/image/pic/timeline/tag3.png";
-const tag4 = "../assets/image/pic/timeline/tag4.png";
-const tag5 = "../assets/image/pic/timeline/tag5.png";
-const circleTimeline = "../assets/image/pic/timeline/circle.png";
-const chatLeft = "../assets/image/pic/timeline/chat-left.png";
-const chatRight = "../assets/image/pic/timeline/chat-right.png";
+const tag1 = "./assets/image/pic/timeline/tag1.png";
+const tag2 = "./assets/image/pic/timeline/tag2.png";
+const tag3 = "./assets/image/pic/timeline/tag3.png";
+const tag4 = "./assets/image/pic/timeline/tag4.png";
+const tag5 = "./assets/image/pic/timeline/tag5.png";
+const circleTimeline = "./assets/image/pic/timeline/circle.png";
 const timelinePage = document.getElementById("timelinePage");
 
 const timelineData = [
@@ -398,8 +391,8 @@ const timelineData = [
 
 timelineData.forEach((item, index) => {
     const bgUrl = index % 2
-    ? "../assets/image/pic/timeline/chat-right.png"
-    : "../assets/image/pic/timeline/chat-left.png";
+    ? "./assets/image/pic/timeline/chat-right.png"
+    : "./assets/image/pic/timeline/chat-left.png";
 
     function isMobile() {
       return window.innerWidth <= 767;
@@ -444,12 +437,12 @@ timelineData.forEach((item, index) => {
 // Timeline End
 
 // Tips Start
-const tipsImage1 = '../assets/image/pic/tips/image1.png';
-const tipsImage2 = '../assets/image/pic/tips/image2.png';
-const tipsImage3 = '../assets/image/pic/tips/image3.png';
-const tipsImage4 = '../assets/image/pic/tips/image4.png';
-const tipsImage5 = '../assets/image/pic/tips/image5.png';
-const tipsImage6 = '../assets/image/pic/tips/image6.png';
+const tipsImage1 = './assets/image/pic/tips/image1.png';
+const tipsImage2 = './assets/image/pic/tips/image2.png';
+const tipsImage3 = './assets/image/pic/tips/image3.png';
+const tipsImage4 = './assets/image/pic/tips/image4.png';
+const tipsImage5 = './assets/image/pic/tips/image5.png';
+const tipsImage6 = './assets/image/pic/tips/image6.png';
 const tipsPage = document.getElementById("tipsPage");
 
 const tipsData = [
@@ -515,8 +508,8 @@ tipsData.forEach((item, index) => {
 
 // Testimoni Start
 import { testimoniData1, testimoniData2 } from "./data/testimoni.js";
-const stars = '../assets/image/pic/testimoni/stars.png';
-const comment = '../assets/image/pic/testimoni/comment.png';
+const stars = './assets/image/pic/testimoni/stars.png';
+const comment = './assets/image/pic/testimoni/comment.png';
 const wrapper1 = document.getElementById('scrollWrapper1');
 const testimoniPage1 = document.getElementById('testimoniId1');
 const wrapper2 = document.getElementById('scrollWrapper2');

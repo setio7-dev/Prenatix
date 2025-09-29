@@ -1,11 +1,11 @@
-const img1 = "../../assets/image/pic/consultation/1.png"
-const img2 = "../../assets/image/pic/consultation/2.png"
-const img3 = "../../assets/image/pic/consultation/3.png"
-const img4 = "../../assets/image/pic/consultation/4.png"
-const img5 = "../../assets/image/pic/consultation/5.png"
-const img6 = "../../assets/image/pic/consultation/6.png"
-const sariImg = "../../assets/image/pic/consultation/review/Sari.png"
-const yuniImg = "../../assets/image/pic/consultation/review/Yuni.png"
+const img1 = "./assets/image/pic/consultation/1.png"
+const img2 = "./assets/image/pic/consultation/2.png"
+const img3 = "./assets/image/pic/consultation/3.png"
+const img4 = "./assets/image/pic/consultation/4.png"
+const img5 = "./assets/image/pic/consultation/5.png"
+const img6 = "./assets/image/pic/consultation/6.png"
+const sariImg = "./assets/image/pic/consultation/review/Sari.png"
+const yuniImg = "./assets/image/pic/consultation/review/Yuni.png"
 
 export const consultation = [
     {
