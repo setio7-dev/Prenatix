@@ -23,7 +23,7 @@ Website ini dibangun menggunakan **teknologi frontend modern** untuk memastikan 
 | ![HTML](https://img.icons8.com/color/48/html-5.png) **HTML** | Struktur utama website untuk menyajikan konten secara semantik dan terstruktur. |
 | ![CSS](https://img.icons8.com/color/48/css3.png) **CSS** | Styling dasar untuk membuat tampilan website menarik dan konsisten. |
 | ![JavaScript](https://img.icons8.com/color/48/javascript.png) **JavaScript** | Bahasa pemrograman untuk membuat website interaktif dan dinamis. |
-| ![Tailwind CSS](https://img.icons8.com/color/48/tailwind.png) **Tailwind CSS** | Framework CSS modern untuk desain cepat, responsif, dan konsisten. |
+| ![Tailwind CSS](https://camo.githubusercontent.com/f383e4b2c5e8c2ca73221c29ef270d55d82eb3beeb79bd6b409dcb6ab64a4b7c/68747470733a2f2f736b696c6c69636f6e732e6465762f69636f6e733f693d7461696c77696e64) **Tailwind CSS** | Framework CSS modern untuk desain cepat, responsif, dan konsisten. |
 
 ---
 
