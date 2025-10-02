@@ -45,6 +45,25 @@ if ('SpeechRecognition' in window || 'webkitSpeechRecognition' in window) {
   recognition.onerror = (event) => {
     console.error("Error:", event.error);
   };
+
+  recognition.onstart = () => {
+    console.log("mendengarkan");
+  };
+  
+  recognition.onresult = (event) => {
+      const transcript = event.results[0][0].transcript;
+      inputChat.value = transcript;
+      submitBtn.click(); 
+  };
+  
+  recognition.onerror = (event) => {
+      console.error('Error:', event.error);
+  };
+  
+  recognition.onend = () => {
+      console.log('Selesai dengar');
+      speakPage.style.display = 'none';
+  };
 } else {
   console.warn("Browser tidak mendukung Speech Recognition");
 }
@@ -70,25 +89,6 @@ voiceBtn.addEventListener('click', () => {
     
     speakPage.style.display = 'flex';
 });
-
-recognition.onstart = () => {
-    console.log("mendengarkan");
-};
-
-recognition.onresult = (event) => {
-    const transcript = event.results[0][0].transcript;
-    inputChat.value = transcript;
-    submitBtn.click(); 
-};
-
-recognition.onerror = (event) => {
-    console.error('Error:', event.error);
-};
-
-recognition.onend = () => {
-    console.log('Selesai dengar');
-    speakPage.style.display = 'none';
-};
 
 submitBtn.addEventListener('click', () => {
     const userChat = inputChat.value.trim();
